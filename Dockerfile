@@ -2,10 +2,11 @@ ARG YOCTO_BUILDER_BASE
 FROM anyakichi/yocto-builder:${YOCTO_BUILDER_BASE}
 
 RUN \
-  apt-get update && \
-  DEBIAN_FRONTEND=noninteractive apt-get install -y \
+  apt-get update \
+  && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     dblatex \
     docbook-utils \
+    curl \
     libglib2.0-dev \
     libsdl1.2-dev \
     nfs-common \
@@ -14,8 +15,10 @@ RUN \
     xsltproc \
     xterm \
     xutils-dev \
-    && \
-  rm -rf /var/lib/apt/lists/*
+  && curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash \
+  && DEBIAN_FRONTEND=noninteractive apt-get install -y git-lfs \
+  && git lfs install \
+  && rm -rf /var/lib/apt/lists/*
 
 ARG IOTG_YOCTO_BRANCH
 ENV \
