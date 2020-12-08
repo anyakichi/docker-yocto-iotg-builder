@@ -24,5 +24,4 @@ ARG IOTG_YOCTO_BRANCH
 ENV \
   IOTG_YOCTO_BRANCH=${IOTG_YOCTO_BRANCH:-e3900/master}
 
-COPY extract.*.md /etc/buildenv.d/
-COPY setup.*.md /etc/buildenv.d/
+COPY buildenv.d/* /etc/buildenv.d/
