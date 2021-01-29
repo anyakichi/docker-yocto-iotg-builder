@@ -1,13 +1,13 @@
 #!/bin/bash
 
-docker push ${DOCKER_REPO}:latest
-docker push ${DOCKER_REPO}:mr5b04
-docker push ${DOCKER_REPO}:mr5b03
-docker push ${DOCKER_REPO}:mr5b02
-docker push ${DOCKER_REPO}:mr5b01
-docker push ${DOCKER_REPO}:mr4b02
-docker push ${DOCKER_REPO}:mr4b01
-docker push ${DOCKER_REPO}:mr4rtb01
-docker push ${DOCKER_REPO}:mr4
-docker push ${DOCKER_REPO}:mr4b
 docker push ${DOCKER_REPO}:mr3.1
+docker push ${DOCKER_REPO}:mr4b
+docker push ${DOCKER_REPO}:mr4
+docker push ${DOCKER_REPO}:mr4rtb01
+docker push ${DOCKER_REPO}:mr4b01
+docker push ${DOCKER_REPO}:mr4b02
+docker push ${DOCKER_REPO}:mr5b01
+docker push ${DOCKER_REPO}:mr5b02
+docker push ${DOCKER_REPO}:mr5b03
+docker push ${DOCKER_REPO}:mr5b04
+docker push ${DOCKER_REPO}:latest
