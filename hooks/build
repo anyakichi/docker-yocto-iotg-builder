@@ -19,6 +19,7 @@ build()
 
 if [ $# -eq 0 ]; then
     build latest e3900/mater xenial-warrior
+    build mr5b04 MR5-B-04 xenial-warrior
     build mr5b03 MR5-B-03 xenial-warrior
     build mr5b02 MR5-B-02 xenial-warrior
     build mr5b01 MR5-B-01 xenial-warrior

@@ -1,6 +1,7 @@
 #!/bin/bash
 
 docker push ${DOCKER_REPO}:latest
+docker push ${DOCKER_REPO}:mr5b04
 docker push ${DOCKER_REPO}:mr5b03
 docker push ${DOCKER_REPO}:mr5b02
 docker push ${DOCKER_REPO}:mr5b01
