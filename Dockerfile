@@ -1,12 +1,13 @@
-ARG YOCTO_BUILDER_BASE
-FROM anyakichi/yocto-builder:${YOCTO_BUILDER_BASE}
+ARG base
+FROM ghcr.io/anyakichi/yocto-builder:${base}
 
 RUN \
   apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    curl \
     dblatex \
     docbook-utils \
-    curl \
+    git-core \
     libglib2.0-dev \
     libsdl1.2-dev \
     nfs-common \
@@ -19,8 +20,8 @@ RUN \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y git-lfs \
   && rm -rf /var/lib/apt/lists/*
 
-ARG IOTG_YOCTO_BRANCH
-ENV \
-  IOTG_YOCTO_BRANCH=${IOTG_YOCTO_BRANCH:-e3900/master}
-
 COPY buildenv.d/* /etc/buildenv.d/
+
+ARG iotg_yocto_branch
+ENV \
+  IOTG_YOCTO_BRANCH=${iotg_yocto_branch:-e3900/master}
