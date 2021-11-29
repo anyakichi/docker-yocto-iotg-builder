@@ -17,7 +17,7 @@ RUN \
     xterm \
     xutils-dev \
   && curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash \
-  && DEBIAN_FRONTEND=noninteractive apt-get install -y git-lfs \
+  && DEBIAN_FRONTEND=noninteractive apt-get install -y --force-yes git-lfs \
   && rm -rf /var/lib/apt/lists/*
 
 COPY buildenv.d/* /etc/buildenv.d/
